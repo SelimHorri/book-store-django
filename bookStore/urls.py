@@ -1,9 +1,9 @@
 
+from django.urls.resolvers import URLPattern
+from .views import index,getBookDetails
 from django.urls import path
-from . import views
 
-urlpatterns = [
-  path("hello/", views.hello)
+urlpatterns=[
+    path("",index,name='index'),
+    path("<int:book_id>/",getBookDetails,name='getBookDetails')
 ]
-
-
